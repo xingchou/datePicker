@@ -1,9 +1,8 @@
 # datePicker
 移动端日期选择组件
 
-
+<script>
 new DatePicker({
-
     "type": "3", //0年, 1年月, 2月日, 3年月日(默认为3)
     
     "title": '请选择日期', //标题（可选）
@@ -20,9 +19,8 @@ new DatePicker({
         //回调函数（val为选中的日期）
         self.nowVal = val;
     }
-    
 });
-
+</script>
 
 
 
