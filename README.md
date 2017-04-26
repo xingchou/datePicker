@@ -1,7 +1,9 @@
 # datePicker
 移动端日期选择组件
 
-new DatePicker({
+new DatePicker(options);
+
+options = {
     //0年, 1年月, 2月日, 3年月日(默认为3)
     "type": "3",
 
@@ -24,4 +26,5 @@ new DatePicker({
         //回调函数（val为选中的日期）
         self.nowVal = val;
     }
-});
+    
+}
