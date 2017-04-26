@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0,user-scalable=no" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>datePicker demo</title>
+    <script>
+        (function(window){var setHtmlSize=function(w){var b=750/100;var c=window.innerWidth;if(w){c=w}var a=c/b;if(a<42){a=42}else if(a>60){a=60}document.querySelector("html").style.fontSize=a+"px";if(navigator.userAgent.indexOf("iPad")!=-1){document.querySelector("html").style.fontSize="60px"}};setHtmlSize();window.onresize=function(){var w=window.innerWidth;setHtmlSize(w)}}(window));
+    </script>
+    <style>
+        body {
+            font-size: 0.3rem;
+            padding: 0.25rem;
+        }
+        /*content*/
+        .plugin-list {
+            overflow: hidden;
+            width: 100%;
+            padding-bottom: 0.2rem;
+        }
+        .plugin-list > li {
+            width: 100%;
+            margin-bottom: 0.6rem;
+        }
+        .plugin-list > li > h3 {
+            font-size: 0.3rem;
+            font-weight: 500;
+            margin-bottom: 0.1rem;
+        }
+        .plugin-list > li > div.text {
+            background: #f1f1f1;
+            padding: 0.2rem 0 0.2rem 0.3rem;
+            line-height: 0.55rem;
+            border-radius: 0.05rem;
+        }
+        .plugin-list > li > div.text > p {
+            padding: 0.1rem 0;
+        }
+        .plugin-list > li > div.text > a {
+            display: inline-block;
+            text-decoration: underline;
+        }
+        .plugin-list > li > div.text > input {
+            width: 100%;
+            font-size: 0.3rem;
+            border: none;
+            line-height: 0.55rem;
+            background: none;
+            color: red;
+        }
+        .plugin-list > li > p.btn {
+            font-size: 0.3rem;
+            width: 100%;
+            line-height: 0.9rem;
+            margin-bottom: 0.3rem;
+            text-align: center;
+            background: #333;
+            color: white;
+            border-radius: 0.1rem;
+        }
+        pre {
+            position: relative;
+            font-size: 0.26rem;
+            width: 100%;
+            padding: 0.2rem;
+            margin: 0 0 0.3rem;
+            background: #f1f1f1;
+            color: #333;
+            border-radius: 0.05rem;
+        }
+        pre:after {
+            font-size: 0.28rem;
+            color: #cccccc;
+            content: 'JS';
+            position: absolute;
+            right: 0.1rem;
+            top: 0.1rem;
+        }
+    </style>
+
+    <link href="./picker.css" rel="stylesheet" />
+</head>
+<body>
+<div>
+    <ul class="plugin-list">
+        <li>
+            <h3>Name：</h3>
+            <div class="text">DatePicker</div>
+        </li>
+        <li>
+            <h3>Introduction：</h3>
+            <div class="text">移动端的日期选择器插件</div>
+        </li>
+        <li>
+            <h3>Demo：</h3>
+            <p class="btn" onclick="demoClick()">demo</p>
+            <div class="text">
+                您选择的日期为：<input type="text" readonly="readonly" id="nowValue">
+            </div>
+        </li>
+        <li>
+            <h3>Usage：</h3>
+
+<pre class="JS">
+new DatePicker({
+    //0年, 1年月, 2月日, 3年月日
+    "type": "3",
+
+    //标题（可选）
+    "title": '请选择日期',
+
+    //最大年份（可选）
+    "maxYear": "2100",
+
+    //最小年份（可选）
+    "minYear": "1900",
+
+    //日期分割符(可选)
+    "separator": "-",
+
+    //默认值（可选）
+    "defaultValue": '',
+
+    "callBack": function (val) {
+        //回调函数（val为选中的日期）
+        self.nowVal = val;
+    }
+});
+</pre>
+        </li>
+        <li>
+            <h3>Path：</h3>
+            <div class="text">
+                文件路径：</br>
+                'src/lib/datePicker/picker.css'
+                'src/lib/datePicker/datePicker.js'
+            </div>
+        </li>
+    </ul>
+</div>
+
+
+<script src="./datePicker.min.js"></script>
+<script>
+    // 日期选择器
+    function demoClick() {
+        var nowValue = document.getElementById('nowValue');
+        new DatePicker({
+            "type": "3",//0年, 1年月, 2月日, 3年月日
+            "title": '请选择日期',//标题(可选)
+            "maxYear": "",//最大年份（可选）
+            "minYear": "",//最小年份（可选）
+            "separator": "-",//分割符(可选)
+            "defaultValue": nowValue.value,//默认值（可选）
+            "callBack": function (val) {
+                //回调函数（val为选中的日期）
+                nowValue.value = val;
+            }
+        });
+    }
+</script>
+</body>
+</html>
