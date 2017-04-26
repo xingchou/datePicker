@@ -1,6 +1,7 @@
 # datePicker
 移动端日期选择组件
 
+
 new DatePicker({
 
     "type": "3", //0年, 1年月, 2月日, 3年月日(默认为3)
@@ -21,6 +22,8 @@ new DatePicker({
     }
     
 });
+
+
 
 
 ## demo：
