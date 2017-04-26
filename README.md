@@ -4,6 +4,7 @@
 new DatePicker(options);
 
 options = {
+    
     //0年, 1年月, 2月日, 3年月日(默认为3)
     "type": "3",
 
