@@ -27,3 +27,8 @@ new DatePicker({
     }
     
 });
+
+
+demo：
+
+https://xingchou.github.io/pluginApp/dist/index.html#/list/datePicker
