@@ -2,7 +2,19 @@
 移动端日期选择组件，压缩后只有几KB
 
 
-# Usage
+## Usage
+```javascript
+import：
+    import Picker from 'picker.min.js'
+    @import "picker.css"
+    
+直接引入：
+    <link href="picker.css" rel="stylesheet" />
+    <script src='picker.min.js'></script>
+```
+    
+
+## Function
 ```javascript
 new DatePicker({
     "type": "3", //0年, 1年月, 2月日, 3年月日(默认为3)
@@ -25,6 +37,6 @@ new DatePicker({
 });
 ```
 
-## demo：
+## Demo：
 
 https://xingchou.github.io/pluginApp/dist/index.html#/list/datePicker
